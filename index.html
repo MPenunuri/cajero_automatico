@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code-bank</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./script.js"></script>
+</head>
+<body>
+    <header>
+        <p id="logo">Code-bank</p>
+        <button class="admn_button">Ingreso al sistema</button>
+    </header>
+    
+    <main>
+        <section class="log_in_section">
+            <h1>El banco de tod@s l@s coders</h1>
+            <p class="h1_subtext">Bienvenido a tu cajero automático, en Code-bank nos complace servirte.<br> <br> Inicia sesión para administrar tu cuenta. </p>
+            <button id="log_in_first_button" class="log_in_first_button"> Ingresar a mi cajero automático</button>
+
+        </section>
+        <section class="sign_up_section">
+            <h2>¡Queremos que nuestra familia crezca!</h2>
+            <p class="h2_subtext">Si no eres usuario y quieres gozar de todos los beneficios de nuestra red de cajeros automáticos, pulsa en el siguiente botón y se parte de esta gran familia.</p>
+            <button id="sign_up_first_button" class="sign_up_first_button">Quiero mi cuenta</button>
+        </section>
+    </main>
+
+    <section class="modal_container" id="modal_container">
+
+        <section class="modal_log_in_container" id="modal_log_in_container">
+            <h3>Accede a tu cuenta</h3>
+            <div class="log_in_id_field">
+                <p class="log_in_id_tag">Ingresa tu id</p>
+                <input type="text" size="50"  class="text_input" id="log_in_id_input" spellcheck="false">
+            </div>
+            <div class="log_in_password_field">
+                <p class="log_in_password_tag">Ingresa tu contraseña</p>
+                <input type="password" size="50" class="text_input" id="log_in_password_input" spellcheck="false">
+            </div>
+            <div class="log_in_buttons_field">
+                <button class="cancel_button" id="log_in_cancel_button">Cancelar</button>
+                <button class="approval_button" id="log_in_button">Ingresar</button>
+            </div>
+        </section>
+
+        <section class="modal_sign_up_container" id="modal_sign_up_container">
+            <h4>Apertura tu cuenta</h4>
+            <div class="sign_up_field">
+                <p class="sign_up_tag">Registra tu nombre</p>
+                <input type="text" size="50" class="text_input sign_up_input" id="sign_up_name_input">
+            </div>
+            <div class="sign_up_field">
+                <p class="sign_up_tag">Registra tu primer apellido</p>
+                <input type="text" size="50" class="text_input sign_up_input" id="sign_up_first_last_name_input">
+            </div>
+            <div class="sign_up_field">
+                <p class="sign_up_tag">Registra tu segundo apellido</p>
+                <input type="text" size="50" class="text_input sign_up_input" id="sign_up_surname_input">
+            </div>
+            <div class="sign_up_field">
+                <p class="sign_up_tag">Registra tu fecha de nacimiento</p>
+                <input type="date" size="50" class="text_input sign_up_input" id="sign_up_birthday_input">
+            </div>
+            <div class="sign_up_field">
+                <p class="sign_up_tag">Selecciona tu sexo</p>
+                <div class="sign_up_sex_field">
+                    <input type="radio" id="sign_up_sex_input_male" name="sex" value="male">
+                    <label for="sign_up_sex_input_male" class="sex_option">Masculino</label>
+                    <input type="radio" id="sign_up_sex_input_female" name="sex" value="male">
+                    <label for="sign_up_sex_input_female" class="sex_option">Femenino</label>
+                    <input type="radio" id="sign_up_sex_input_unknown" name="sex" value="unknown">
+                    <label for="sign_up_sex_input_unknown" class="sex_option">Prefiero no decir</label>
+                </div>
+            </div>
+            <div class="sign_up_field sign_up_money_field">
+                <p class="sign_up_tag">Monto de apertura</p>
+                <input type="number" class="text_input sign_up_input" id="sign_up_money_input">
+            </div>
+            <div class="sign_up_buttons_field">
+                <button class="cancel_button" id="sign_up_cancel_button">Cancelar</button>
+                <button class="approval_button" id="sign_up_button">Activar cuenta</button>
+            </div>
+        </section>
+    </section>
+        
+    <section class="user_panel" id="user_panel">
+        <section class="user_top_panel" id="user_top_panel">
+            <p id="logo">Code-bank</p>
+            <button class="exit_button" id="exit_button">Cerrar sesión</button>
+        </section>
+        <section class="user_section" id="user_section">
+            <div class="user_option user_option_1">
+                <button id="checkBalance_button" class="user_button checkBalance">
+                    <span class="user_span">Consulta</span>
+               </button>
+            </div>
+            <div class="user_option user_option_2">
+                <button id="deposit_button" class="user_button deposit">
+                     <span class="user_span">Depósito</span>
+                </button>
+            </div>
+            <div class="user_option user_option_3">
+                <button id="withdrawal_button" class="user_button withdrawal">
+                    <span class="user_span">Retiro</span>
+               </button>
+            </div>
+            <div class="user_option user_option_4">
+                <button id="transfer_button" class="user_button transfer">
+                    <span class="user_span">Transferencia</span>
+               </button>
+            </div>
+        </section>
+    </section>
+
+        <section class="modal_operations_container" id="modal_operations_container">
+            <section class="modal_operations_panel" id="modal_operations_panel">
+
+                <h5 id="user_operation_title"></h5>
+
+                <div class="operation_field checkBalance_field" id="checkBalance_field">
+                    <p id="checkBalance_text">Tu saldo actual es de:</p>
+                    <p id="balance_num"></p>
+                    <div class="buttons_field" id="checkBalance_buttons">
+                        <button class="approval_button op_button" id="checkBalance_approval_button">Aceptar</button>
+                    </div>
+                </div>
+
+                <div class="operation_field deposit_field" id="deposit_field">
+                    <p class="operation_tag">Monto a depositar:</p>
+                    <input type="number" class="operation_input" id="deposit_input">
+                    <div class="buttons_field" id="deposit_buttons">
+                        <button class="cancel_button op_button" id="deposit_cancel_button">Cancelar</button>
+                        <button class="approval_button op_button" id="deposit_approval_button">Aceptar</button>
+                    </div>
+                </div>
+
+                <div class="operation_field withdrawal_field" id="withdrawal_field">
+                    <p class="operation_tag">Monto a retirar:</p>
+                    <input type="number" class="operation_input" id="withdrawal_input">
+                    <div class="buttons_field" id="withdrawal_buttons">
+                        <button class="cancel_button op_button" id="withdrawal_cancel_button">Cancelar</button>
+                        <button class="approval_button op_button" id="withdrawal_approval_button">Aceptar</button>
+                    </div>
+                </div>
+
+                <div class="operation_field transfer_field" id="transfer_field">
+                    <p class="operation_tag">Transferir a id:</p>
+                    <input type="text" class="operation_input" id="id_transfer_input" spellcheck="false">
+                    <p class="operation_tag">Monto a transferir:</p>
+                    <input type="number" class="operation_input" id="num_transfer_input">
+                    <div class="buttons_field" id="_operation_buttons_field">
+                        <button class="cancel_button op_button" id="transfer_cancel_button">Cancelar</button>
+                        <button class="approval_button op_button" id="transfer_approval_button">Aceptar</button>
+                    </div>
+                </div>
+            </section>
+    </section>
+
+    <footer>
+        <p>Copyright © Code-bank 2022. Todos los derechos reervados.</p>
+    </footer>
+
+</body>
+</html>
